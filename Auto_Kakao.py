@@ -70,14 +70,14 @@ def doubleClickImg (imagePath):
 
 
 def set_delay():
-    delay_time = input("몇 초 후에 프로그램을 실행하시겠습니까? : ")
-    print(delay_time + "초 후에 프로그램을 실행합니다.")
+    delay_time = input("How many seconds do you want the program to run? : ")
+    print("Run the program after "+ delay_time + "seconds.")
     for remaining in range(int(delay_time), 0, -1):
         sys.stdout.write("\r")
         sys.stdout.write("{:2d} seconds remaining.".format(remaining))
         sys.stdout.flush()
         time.sleep(1)
-    sys.stdout.write("\r프로그램 실행!\n")
+    sys.stdout.write("\rProgram start!\n")
     os.system('"C:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe"')
 
 
@@ -93,7 +93,7 @@ def logout():
 
 
 def bye_msg():
-    input('프로그램이 종료되었습니다.')
+    input('Program ended.')
 
 
 def set_import_msg():
@@ -107,12 +107,12 @@ def initialize():
     print('Monitor size : ', end='')
     print(pyautogui.size())
     print(pyautogui.position())
-    filter_keyword = input("필터링할 친구 이름. 없으면 enter.  ex) 학생 직장 99 : ")
-    init_number = input("필터링한 친구 기준 시작지점(ex. 필터링된 친구 시작지점) : ")
-    repeat_number = input("반복할 횟수(ex. 필터링 검색된 친구 수) : ")
-    my_msg = input("전송할 메세지. enter를 누를 경우 send_for_text.txt를 전송 : ")
+    filter_keyword = input("The friend name to filter on. If not, just enter.  ex) Middle Student : ")
+    init_number = input("Starting Point by Friends Filtered (ex. 2) : ")
+    repeat_number = input("number of repetitions (ex. 3) : ")
+    my_msg = input("The message to send. When enter is pressed, send_for_text.txt is sent : ")
     print('=================')
-    print('메세지 전송 시작!')
+    print('Message send start!')
     print('=================')
     #os.system('"C:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe"')
     return (filter_keyword, init_number, repeat_number, my_msg)
